@@ -4,6 +4,7 @@ import numpy as np # linear algebra
 import pandas as pd 
 import itertools
 from scipy.stats import ks_2samp
+from tqdm import tqdm 
 #import pickle
 
 
@@ -37,7 +38,7 @@ class ks_fest(object):
 
             for col in df.columns:    
                 sorted_col=np.sort(df.loc[df[var_dim]==dim, col])
-                cdf= np.searchsorted(np.linspace(start=min(sorted_col),stop=max(sorted_col),num=500),data)/len(sorted_col)
+                cdf= np.searchsorted(np.linspace(start=min(sorted_col),stop=max(sorted_col),num=resolution),data)/len(sorted_col)
                 self.dict_cdfs[col]=cdf
 
 
