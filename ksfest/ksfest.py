@@ -1,3 +1,5 @@
+# Any results you write to the current directory are saved as output.
+
 # -*- coding: utf-8 -*-
 
 import numpy as np # linear algebra
@@ -15,11 +17,11 @@ class ks_fest(object):
         self.dict_cdfs= dict()
         self.plot_scale = plot_scale
    
-    def fit(df,resolution=500,sample=0.05,var_dim):
+    def fit_curves(self, df,resolution=500,sample=0.05,var_dim):
 
         '''
         Fit and store all CDF curves by a variable
-        df :  pandas dataframe
+        df :  Pandas dataframe
         var_dim : string 
         sample: samplin portion from datafram
 
@@ -27,22 +29,37 @@ class ks_fest(object):
 
         #Sampling
 
-        df=df.sample(frac=sample)
-        # vALORES MISSINF
+        data=df.sample(frac=sample)
+        #valores Missing
         
 
         if df.shape[0]<resolution:  
             resolution=df.shape[0]
         
-        for dim in np.unique(var_dim):
+        
+
+        for dim in np.unique(df[var_dim]):
+            dict_cdfs={}
+            for col in df.columns:    
+                sorted_col=np.sort(df.loc[df[var_dim]==dim, col].fillna(-1))
+                n=len(sorted_col)
+                bins_vector=np.linspace(start=min(sorted_col),stop=max(sorted_col),num=resolution)
+                cdf= np.searchsorted(bins_vector, sorted_col)/n
+                dict_cdfs[col]=cdf
+            self.dict_cdfs_var_dim[dim]=dict_cdfs
+
+        else:
 
             for col in df.columns:    
-                sorted_col=np.sort(df.loc[df[var_dim]==dim, col])
-                cdf= np.searchsorted(np.linspace(start=min(sorted_col),stop=max(sorted_col),num=resolution),data)/len(sorted_col)
-                self.dict_cdfs[col]=cdf
+                    sorted_col=np.sort(df.loc[df[var_dim]==dim, col].fillna(-1))
+                    n=len(sorted_col)
+                    bins_vector=np.linspace(start=min(sorted_col),stop=max(sorted_col),num=resolution)
+                    cdf= np.searchsorted(bins_vector, sorted_col)/n
+                    self.dict_cdfs[col]=cdf
 
 
-    def fit_ks(df,var_dim,columns, sample):
+
+    def fit_ks(self, df,var_dim,columns, sample):
         for comb in tqdm(itertools.combinations(np.unique(df[var_dim]),2)):
             ks_list=[]
             
