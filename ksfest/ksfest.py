@@ -14,9 +14,9 @@ class ks_fest(object):
     def __init__(self):
         
         self.dict_ks = dict()
-        self.dict_cdfs= dict()
         self.plot_scale = plot_scale
-   
+        self.dict_cdfs_var_dim=dict()
+
     def fit_curves(self, df,resolution=500,sample=0.05,var_dim):
 
         '''
@@ -29,7 +29,7 @@ class ks_fest(object):
 
         #Sampling
 
-        data=df.sample(frac=sample)
+        df=df.sample(frac=sample)
         #valores Missing
         
 
