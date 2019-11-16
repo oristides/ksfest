@@ -40,7 +40,7 @@ setup(
             'ksfest=ksfest.cli:main',
         ],
     },
-    install_requires=requirements,
+    install_requires=['pandas', 'numpy', 'scipy' ,'itertools','tqdm'],
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
@@ -51,6 +51,7 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/oristides/ksfest',
+    download_url="https://github.com/oristides/ksfest/archive/0.01.tar.gz",
     version='0.1.0',
     zip_safe=False,
 )
