@@ -1,5 +1,3 @@
-# Any results you write to the current directory are saved as output.
-
 # -*- coding: utf-8 -*-
 
 import numpy as np # linear algebra
@@ -9,23 +7,30 @@ from scipy.stats import ks_2samp
 from tqdm import tqdm 
 #import pickle
 
-
 class ks_fest(object):
     def __init__(self):
         
         self.dict_ks = dict()
-        self.plot_scale = plot_scale
         self.dict_cdfs_var_dim=dict()
 
-    def fit_curves(self, df,resolution=500,sample=0.05,var_dim):
+    def fit_curves(self, df, var_dim, resolution=500,sample=0.05):
 
-        '''
-        Fit and store all CDF curves by a variable
-        df :  Pandas dataframe
+
+        """
+
+        Fit and save cdf to check data quality.
+
+
+        Parameters
+        ----------
+        df : pandas dataframe
         var_dim : string 
         sample: samplin portion from datafram
-
-        '''
+        
+        Attributes
+        ----------
+    
+        """
 
         #Sampling
 
@@ -35,7 +40,6 @@ class ks_fest(object):
 
         if df.shape[0]<resolution:  
             resolution=df.shape[0]
-        
         
 
         for dim in np.unique(df[var_dim]):
@@ -55,7 +59,7 @@ class ks_fest(object):
                     n=len(sorted_col)
                     bins_vector=np.linspace(start=min(sorted_col),stop=max(sorted_col),num=resolution)
                     cdf= np.searchsorted(bins_vector, sorted_col)/n
-                    self.dict_cdfs[col]=cdf
+                    self.dict_cdfs_var_dim[col]=cdf
 
 
 

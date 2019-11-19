@@ -21,10 +21,14 @@ script: tox
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
-  user: oristides
-  password:
-    secure: PLEASE_REPLACE_ME
+  user: "__token__"
+  password: "pypi-AgEIcHlwaS5vcmcCJDVjZWM1YTQ0LTg0NTItNGJjMi1hYjhlLTJlODJkZDhlNjkyMQACN3sicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJrc2Zlc3QiXX0sICJ2ZXJzaW9uIjogMX0AAAYgRyME1eUDArtqiyuUYbicDnQp5b2mM5FiURfJAw5M-QM"
+#  secure: PLEASE_REPLACE_ME
   on:
     tags: true
     repo: oristides/ksfest
-    python: 3.8
+    python:
+      - 3.8
+      - 3.7
+      - 3.6
+      
