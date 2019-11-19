@@ -21,9 +21,9 @@ with open(path.join('requirements.txt'), encoding='utf-8') as f:
     requirements = [line.strip() for line in f if line]
 
 
-setup_requirements = ['os']
+setup_requirements = []
 
-test_requirements = [ ]
+test_requirements = []
 
 setup(
     author="Oriel Zambrano Vergara",
