@@ -3,7 +3,10 @@
 
 """The setup script."""
 
+from codecs import open
+from os import path
 from setuptools import setup, find_packages
+
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -11,9 +14,14 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', ]
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
 
-setup_requirements = [ ]
+with open(path.join('requirements.txt'), encoding='utf-8') as f:
+    requirements = [line.strip() for line in f if line]
+
+
+setup_requirements = ['os']
 
 test_requirements = [ ]
 
@@ -40,7 +48,7 @@ setup(
             'ksfest=ksfest.cli:main',
         ],
     },
-    install_requires=['pandas', 'numpy', 'scipy' ,'itertools','tqdm'],
+    install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,

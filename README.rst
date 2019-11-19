@@ -14,9 +14,7 @@ ksfest
         :alt: Documentation Status
 
 
-
-
-Python package to check data quality just usin ks tests
+Python package to check data quality using  ks tests
 
 
 * Free software: MIT license
@@ -26,12 +24,14 @@ Python package to check data quality just usin ks tests
 Features
 --------
 
-* TODO
+
+* Testing functions
+*  Automate Documentation Travis.ci
 
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+This package was created with Cookiecutter_
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
