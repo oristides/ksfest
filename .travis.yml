@@ -4,7 +4,7 @@ python:
 - '3.7'
 - '3.6'
 - '3.5'
-install: pip install -U tox-travis
+install: pip install -U tox
 script: tox
 deploy:
   provider: pypi
@@ -15,8 +15,6 @@ deploy:
   on:
     tags: true
     repo: oristides/ksfest
-    branch:
-      - master
 after_deploy: "echo 'Deployment finished!'"
     
     
