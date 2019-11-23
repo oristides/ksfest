@@ -15,8 +15,8 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 
-with open(path.join('requirements.txt'), encoding='utf-8') as f:
-    requirements = [line.strip() for line in f if line]
+#with open(path.join('requirements.txt'), encoding='utf-8') as f:
+#    requirements = [line.strip() for line in f if line]
 
 
 setup_requirements = []
@@ -40,13 +40,13 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="Python package to check data quality just usin ks tests",
+    description="Python package to check data quality just using ks tests",
     entry_points={
         'console_scripts': [
             'ksfest=ksfest.cli:main',
         ],
     },
-    install_requires=requirements,
+    install_requires=['numpy>=1.15','pandas>=0.19','scipy>=0.18','tqdm>=4.38.0'],
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
@@ -57,7 +57,7 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/oristides/ksfest',
-    download_url="https://github.com/oristides/ksfest/archive/0.1.2.tar.gz",
-    version='0.1.0',
+    download_url="https://github.com/oristides/ksfest/archive/0.1.1.tar.gz",
+    version='0.1.1',
     zip_safe=False,
 )

@@ -4,7 +4,7 @@ python:
 - 3.7
 - 3.6
 - 3.5
-install: pip install -U tox-travis virtualenv
+install: pip install -U tox-travis wheel
 script: tox
 deploy:
   provider: pypi
@@ -15,7 +15,13 @@ deploy:
   on:
     tags: true
     repo: oristides/ksfest
+    
 after_deploy: "echo 'Deployment finished!'"
+
+after_success:
+  - codecov
+
+
     
     
    
