@@ -15,11 +15,8 @@ deploy:
   on:
     tags: true
     repo: oristides/ksfest
-    
-after_deploy: "echo 'Deployment finished!'"
 
-after_success:
-  - codecov
+after_deploy: "echo 'Deployment finished!'"
 
 
     
