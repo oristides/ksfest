@@ -5,10 +5,10 @@
 
 
 import unittest
+import click
 from click.testing import CliRunner
 
 from ksfest import ksfest
-from ksfest import click
 
 
 class TestKsfest(unittest.TestCase):
