@@ -14,8 +14,6 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
 
 with open(path.join('requirements.txt'), encoding='utf-8') as f:
     requirements = [line.strip() for line in f if line]
