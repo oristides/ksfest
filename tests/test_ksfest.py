@@ -5,7 +5,6 @@
 
 
 import unittest
-from click.testing import CliRunner
 
 from ksfest import ksfest
 from ksfest import cli
