@@ -57,7 +57,7 @@ setup(
     test_suite='tests',
     tests_require=['click>=7.0'],
     url='https://github.com/oristides/ksfest',
-    download_url="https://github.com/oristides/ksfest/archive/0.1.2.tar.gz",
+    download_url="https://github.com/oristides/ksfest/archive/0.1.1.tar.gz",
     version='0.1.2',
     zip_safe=False,
 )
