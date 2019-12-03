@@ -10,6 +10,7 @@ script:
   - tox
 deploy:
   provider: pypi
+  skip_existing: true
   distributions: sdist bdist_wheel
   user: "__token__"
   password:
