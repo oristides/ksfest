@@ -5,14 +5,17 @@ python:
 - 3.6
 
 install: pip install -U tox-travis wheel
-script: tox
+script: 
+  - git clean -f -d -x
+  - tox
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: "__token__"
   password:
     secure: UI/rk4rLbm4Z1uJdVUW+jTrn9MvjjfxDW9SP34tvh31XFK15u8eQG1e7EeHiKWvjyqdeJhHJv7fSUPCITppyPserm7ZP801viq3mqWck3pX3TNSKfHjOFy5E8pbjUoIoh4ucrT9uBSsxKOSjUo5BF5hgC2qULcO9en+cg+C50jiXdHysHV9rt4utOhiTPHKe5okVdw9xOz8g6GiDa1+DrCfqlNsXoiAWEy/ZlCf+QLxZouKCB9Q9fPDHtfQ1kqRIETV4SnZe4r6jFk7+UndBhm9FrRbd1X09vxiFoqNqtRLTdTftF4f1/VEl4lJev2D0EBnPhc7V3LW+XwYIS+AB8071/uJV3sbdOdYiDIAGhd2yq7VlLxAsV+26lKSmVCZdMUJDl0yytUKP79mOJdvJYL4rdjtGfXU5c01BCAVwwHCrDmLEcoL3djhic0zqxG0cV9xXwE6LtKvE9M9wzwBKv8X8Es+F10A8O+bF467bDl4GVqPtK5/+qm1nllbe1xnrDUzK6IsDHf1dkngWqOP6b0LXGWVojDTFAeArsKRe+KnGgMz6t6MWUMx+lUgThEW8i5DaF1qW0Ya3ySn963wHaHUW69bB8672sqaFKBgtz+mDTCGV46QWBU1p16nSCvOozKBT6PykSBTx4o59xS2rJt22Ep5zCJJLwv4mltk43CY=
-
+  on:
+    repo: oristides/ksfest
 after_deploy: "echo 'Deployment finished!'"
 
 
