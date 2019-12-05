@@ -8,7 +8,7 @@ import unittest
 import click
 from click.testing import CliRunner
 
-from ksfest import ksf
+from ksf import	ksfest
 
 
 class TestKsfest(unittest.TestCase):
