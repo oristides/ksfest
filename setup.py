@@ -42,7 +42,7 @@ setup(
             'ksfest=ksfest.cli:main',
         ],
     },
-    install_requires=['numpy>=1.15','pandas>=0.19','scipy>=0.18','tqdm>=4.38.0', 'click>=7.0'],
+    install_requires=['numpy>=1.15','pandas>=0.19','scipy>=0.18','tqdm>=4.38.0', 'matplotlib', 'click>=7.0'],
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
