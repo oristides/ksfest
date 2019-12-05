@@ -31,7 +31,7 @@ setup(
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
-        'Natural Language :: English',
+        'Natural Language basestring:: English',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
@@ -53,7 +53,7 @@ setup(
     test_suite='tests',
     tests_require=['click>=7.0'],
     url='https://github.com/oristides/ksfest',
-    download_url="https://github.com/oristides/ksfest/archive/0.1.4.tar.gz",
-    version='0.1.4',
+    download_url="https://github.com/oristides/ksfest/archive/0.1.1.tar.gz",
+    version='0.1.1',
     zip_safe=False,
 )

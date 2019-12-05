@@ -1,11 +1,13 @@
+
+#import pickle
 import itertools
 from scipy.stats import ks_2samp
 from tqdm import tqdm
-#import pickle
+import matplotlib.pyplot as plt
 
 class ks_fest(object):
     def __init__(self):
-        
+
         #self.dict_ks = dict()
         self.dict_cdfs_var_dim=dict()
         self.cols=None
