@@ -1,5 +1,5 @@
 Welcome to ksfest's documentation!
-======================================
+==================================
 
 .. toctree::
    :maxdepth: 2
@@ -8,13 +8,15 @@ Welcome to ksfest's documentation!
    readme
    installation
    usage
-   modules
    contributing
    authors
    history
 
+
+
 Indices and tables
 ==================
+
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`

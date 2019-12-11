@@ -1,0 +1,1 @@
+.. include:: ksfest/HISTORY.rst
