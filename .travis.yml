@@ -4,7 +4,7 @@ python:
 - 3.7
 - 3.6
 
-install: pip install -U tox-travis
+install: pip install -U tox-travis sphinx
 script: 
   - git clean -f -d -x
   - tox

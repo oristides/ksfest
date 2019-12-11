@@ -8,7 +8,23 @@ import numpy as np
 import pandas as pd
 
 class ks_fest(object):
+     """Uses Tree SHAP algorithms to explain the output of ensemble tree models.
+    Tree SHAP is a fast and exact method to estimate SHAP values for tree models and ensembles of trees,
+    under several different possible assumptions about feature dependence. It depends on fast C++
+    implementations either inside an externel model package or in the local compiled C extention.
+    Parameters
+    ----------
+    
+    data : pandas.DataFrame
+
+    
+    
+        """
+
+
     def __init__(self):
+
+
 
         #self.dict_ks = dict()
         self.dict_cdfs_var_dim=dict()
