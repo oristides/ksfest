@@ -25,9 +25,9 @@ from pathlib import Path
 
 #sys.path.insert(0, project_root)
 
-sys.path.insert(0, Path(os.path.abspath('..')).parents[0])
+#sys.path.insert(0, Path(os.path.abspath('..')).parents[0])
 
-import ksfest
+#import ksfest
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -48,9 +48,9 @@ copyright = '2019, Oriel Zambrano Vergara'
 author = 'Oriel Zambrano Vergara'
 
 # The short X.Y version.
-version = ksfest.__version__
+version = "0.1.6"
 # The full version, including alpha/beta/rc tags.
-release = ksfest.__version__
+release = "0.1.6"
 
 
 
