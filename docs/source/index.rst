@@ -10,7 +10,6 @@ Welcome to ksfest's documentation!
    usage
    contributing
    authors
-   history
 
 
 
