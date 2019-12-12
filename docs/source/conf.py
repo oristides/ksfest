@@ -48,9 +48,9 @@ copyright = '2019, Oriel Zambrano Vergara'
 author = 'Oriel Zambrano Vergara'
 
 # The short X.Y version.
-version = "0.1.6"
+version = "0.1.7"
 # The full version, including alpha/beta/rc tags.
-release = "0.1.6"
+release = "0.1.7"
 
 
 
@@ -66,8 +66,11 @@ language = None
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["sphinx.ext.autodoc", 'sphinx.ext.viewcode',
-    'sphinx.ext.intersphinx',
+extensions = ["sphinx.ext.autodoc", 
+	'sphinx.ext.viewcode',
+    'sphinx.ext.intersphinx', 
+    'sphinx.ext.autosummary',
+    'sphinx.ext.todo',
     'sphinx.ext.todo'
 ]
 
