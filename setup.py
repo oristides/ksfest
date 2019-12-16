@@ -15,8 +15,8 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 
-with open('requirements.txt', encoding='utf-8') as f:
-    requirements = [line.strip() for line in f if line]
+#with open(path.join('requirements.txt'), encoding='utf-8') as f:
+#    requirements = [line.strip() for line in f if line]
 
 
 setup_requirements = []
@@ -41,7 +41,7 @@ setup(
             'ksfest=ksfest.cli:main',
         ],
     },
-    install_requires=requirements,
+    install_requires=['numpy>=1.15', 'pandas>=0.19','scipy>=0.18','tqdm>=4.38.0','matplotlib==3.1.1', 'click>=7.0'],
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
