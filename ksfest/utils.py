@@ -13,7 +13,9 @@ def read_sample(filename, sample_size, verbose =False, **kwargs):
 	sample_size: if value is less than 1 
 	verbose: if true, it will print all reading and sampling stages
     kwargs: all other parameters from pandas.read_csv() function
-      
+
+    values
+    ------  
      """
 	
 

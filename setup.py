@@ -15,7 +15,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 
-with open(path.join('requirements.txt'), encoding='utf-8') as f:
+with open('requirements.txt', encoding='utf-8') as f:
     requirements = [line.strip() for line in f if line]
 
 
@@ -52,7 +52,7 @@ setup(
     test_suite='tests',
     tests_require=['click>=7.0'],
     url='https://github.com/oristides/ksfest',
-    download_url="https://github.com/oristides/ksfest/archive/0.1.6.tar.gz",
+    download_url="https://github.com/oristides/ksfest/archive/0.1.7.tar.gz",
     version='0.1.7',
     zip_safe=False,
 )
