@@ -10,7 +10,7 @@ from .utils import read_sample
 class ks_fest(object):
 
 
-     """
+    """
 
     Values
     ----------
