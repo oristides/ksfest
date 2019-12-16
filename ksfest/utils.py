@@ -1,5 +1,5 @@
-from pandas import pd
-from numpy import np
+import pandas as pd
+import numpy as np
 
 
 def read_sample(filename, sample_size, verbose =False, **kwargs):
