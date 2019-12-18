@@ -22,5 +22,6 @@ python:
   version: 3.7
   install:
     - requirements: requirements.txt
-  command:
-    - pip install -e git+https://github.com/readthedocs/sphinx_rtd_theme.git@2b8717a3647cc650625c566259e00305f7fb60aa#egg=sphinx_rtd_theme
+    
+    - method: setuptools
+      path: .

@@ -25,8 +25,7 @@ Features
 --------
 
 
-* Testing functions
-*  Automate Documentation Travis.ci
+
 
 Credits
 -------
