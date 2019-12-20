@@ -22,10 +22,10 @@ class TestKsfest(unittest.TestCase):
         """Tear down test fixtures, if any."""
 
     def test_ks_fest_dicts(self):
-    import pandas as pd
-        """Test something."""
-    iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
-    gks=ksfest.ks_fest()
-    
-    OUTPUT=gks.get_ks(iris,var_dim='species', sample=0.3, na_number=-1)
-    self.AssertIsInstance(OUTPUT, pd.DataFrame)
+    	import pandas as pd
+	        """Test something."""
+	    iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
+	    gks=ksfest.ks_fest()
+	    
+	    OUTPUT=gks.get_ks(iris,var_dim='species', sample=0.3, na_number=-1)
+	    self.AssertIsInstance(OUTPUT, pd.DataFrame)
