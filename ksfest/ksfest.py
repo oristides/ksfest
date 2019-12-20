@@ -61,8 +61,7 @@ class ks_fest(object):
         try:
             if all(df.dtypes.values==float):
                 raise TypeError("Only numeric columns are allowed")
-
-        
+                
 
         for comb in tqdm(itertools.combinations(np.unique(df[var_dim]),2)):
             ks_list=[]
