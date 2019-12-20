@@ -24,7 +24,7 @@ class ks_fest(object):
         self.dict_cdfs_var_dim=dict()
         self.cols=None
         self.dict_ks=dict()
-    
+        self.dict_ks_pvalues=dict()
     
     def get_ks(self,df,var_dim,columns, sample, na_number=-1, **kwargs):
 
@@ -36,8 +36,10 @@ class ks_fest(object):
         ----------
         df: pandas dataframe or csv file
         var_dim: string 
-        sample: samplin portion from datafram
         
+        sample: samplin portion from dataframe
+        columsn: list of columsn to calculate ks
+        na_number: default number if data is missing
         Attributes
         ----------
         
@@ -47,11 +49,19 @@ class ks_fest(object):
         if not isinstance(df, pd.DataFrame):
             df=read_sample(df, sample_size=sample, **kwargs)
 
-
         if columns==None:
                 columns=[col for col in df.columns if col!=var_dim]
         
         
+        #Teste
+
+        if not isinstance(columns,list) and not isinstance(columns, np.ndarray):
+            raise ValueError("Columns must be a list or a numpy dataframe os strings") 
+
+        try:
+            if all(df.dtypes.values==float):
+                raise TypeError("Only numeric columns are allowed")
+
         
 
         for comb in tqdm(itertools.combinations(np.unique(df[var_dim]),2)):
@@ -59,11 +69,12 @@ class ks_fest(object):
             pvalue_list=[]
 
             for col in columns:
-                ks_result=ks_2samp(df.loc[df[var_dim]==comb[0], col].sample(frac=sample).fillna(na_number), df.loc[df[var_dim]==comb[1], col].sample(frac=sample).fillna(na_number))[0]
+                ks_result=ks_2samp(df.loc[df[var_dim]==comb[0], col].sample(frac=sample).fillna(na_number), df.loc[df[var_dim]==comb[1], col].sample(frac=sample).fillna(na_number))
                 ks_list.append(ks_result[0])
                 pvalue_list.append(ks_result[1])
+
             self.dict_ks[str(comb[0])+'_'+str(comb[1])] = ks_list
-            
+            self.dict_ks_pvalues[str(comb[0])+'_'+str(comb[1])] = pvalue_list
 
         pandas_ks_=pd.DataFrame().from_dict(self.dict_ks)
         self.pandas_ks= pandas_ks_.T
