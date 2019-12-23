@@ -7,7 +7,6 @@
 import unittest
 import click
 from click.testing import CliRunner
-
 from ksfest import ksfest
 
 
@@ -21,10 +20,12 @@ class TestKsfest(unittest.TestCase):
     def tearDown(self):
         """Tear down test fixtures, if any."""
 
-    def test_ks_fest_dicts(self):
-    	import pandas as pd
-    	"""Test something."""
-	    iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
-	    gks=ksfest.ks_fest()
-	    OUTPUT=gks.get_ks(iris,var_dim='species', sample=0.3, na_number=-1)
-	    self.AssertIsInstance(OUTPUT, pd.DataFrame)
+    def test_ks_fest(self):
+        import pandas as pd
+        import seaborn as sns
+
+        iris = sns.load_dataset('iris')
+        gks= ksfest.ks_fest()
+        output= gks.get_ks(iris, var_dim='species', sample=0.3, na_number=-1)
+        num_cols=output.shape[1]
+        self.assertEqual(num_cols, len(gks.cols) +1) # assert number of columns

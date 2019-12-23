@@ -9,16 +9,6 @@ from .utils import read_sample
 
 class ks_fest(object):
 
-
-    """
-
-    Values
-    ----------
-    
-    data : pandas.DataFrame
-
-    """
-
     def __init__(self):
 
         self.dict_cdfs_var_dim=dict()
@@ -26,7 +16,7 @@ class ks_fest(object):
         self.dict_ks=dict()
         self.dict_ks_pvalues=dict()
     
-    def get_ks(self,df,var_dim,columns, sample, na_number=-1, **kwargs):
+    def get_ks(self,df,var_dim, sample,columns=None, na_number=-1, **kwargs):
 
         """
 
@@ -43,7 +33,6 @@ class ks_fest(object):
         Attributes
         ----------
         
-        
         """
 
         if not isinstance(df, pd.DataFrame):
@@ -51,7 +40,7 @@ class ks_fest(object):
 
         if columns==None:
                 columns=[col for col in df.columns if col!=var_dim]
-        
+                self.cols=columns        
         
         #Teste
 
@@ -59,13 +48,14 @@ class ks_fest(object):
             raise ValueError("Columns must be a list or a numpy dataframe os strings") 
 
         try:
-            if all(df.dtypes.values==float):
-                raise TypeError("Only numeric columns are allowed")
-                
+            all(df.dtypes.values==float)
+        except:
+            raise TypeError("Only numeric columns are allowed")
 
         for comb in tqdm(itertools.combinations(np.unique(df[var_dim]),2)):
             ks_list=[]
             pvalue_list=[]
+
 
             for col in columns:
                 ks_result=ks_2samp(df.loc[df[var_dim]==comb[0], col].sample(frac=sample).fillna(na_number), df.loc[df[var_dim]==comb[1], col].sample(frac=sample).fillna(na_number))
@@ -82,15 +72,3 @@ class ks_fest(object):
         self.pandas_ks.index=range(len(self.pandas_ks))
         return self.pandas_ks
     
-    #def save_cdfs(fname, self.disct_cdfs):
-    #    pickle.dump(fname,'wd')
-        
-    #def load_cdfs(fname):
-    #    with open(fname,'rd'):
-    #        self.disct_cdfs=pickle.load() 
-        
-            
-    #def check_ks(df_new,self.disct_cdfs, self.dict_ks):
-        #check columns
-
-        #Calculate new
