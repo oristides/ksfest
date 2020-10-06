@@ -52,7 +52,7 @@ setup(
     test_suite='tests',
     tests_require=['numpy>=1.15','pandas>=0.19','scipy>=0.18','tqdm>=4.38.0','click>=7.0'],
     url='https://github.com/oristides/ksfest',
-    download_url="https://github.com/oristides/ksfest/archive/0.1.19.tar.gz",
-    version='0.1.19',
+    download_url="https://github.com/oristides/ksfest/archive/0.1.20.tar.gz",
+    version='0.1.20',
     zip_safe=False,
 )
