@@ -1,8 +1,6 @@
-
 import itertools
 from scipy.stats import ks_2samp
 from tqdm import tqdm
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from .utils import read_sample
@@ -11,7 +9,6 @@ class ks_fest(object):
 
     def __init__(self):
 
-        self.dict_cdfs_var_dim=dict()
         self.cols=None
         self.dict_ks=dict()
         self.dict_ks_pvalues=dict()

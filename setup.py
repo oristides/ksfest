@@ -52,7 +52,7 @@ setup(
     test_suite='tests',
     tests_require=['numpy>=1.15','seaborn', 'pandas>=0.19','scipy>=0.18','tqdm>=4.38.0','matplotlib==3.1.1', 'click>=7.0'],
     url='https://github.com/oristides/ksfest',
-    download_url="https://github.com/oristides/ksfest/archive/0.1.8.tar.gz",
-    version='0.1.8',
+    download_url="https://github.com/oristides/ksfest/archive/0.1.21.tar.gz",
+    version='0.1.21',
     zip_safe=False,
 )

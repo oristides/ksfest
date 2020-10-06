@@ -19,13 +19,3 @@ class TestKsfest(unittest.TestCase):
 
     def tearDown(self):
         """Tear down test fixtures, if any."""
-
-    def test_ks_fest(self):
-        import pandas as pd
-        import seaborn as sns
-
-        iris = sns.load_dataset('iris')
-        gks= ksfest.ks_fest()
-        output= gks.get_ks(iris, var_dim='species', sample=0.3, na_number=-1)
-        num_cols=output.shape[1]
-        self.assertEqual(num_cols, len(gks.cols) +1) # assert number of columns
