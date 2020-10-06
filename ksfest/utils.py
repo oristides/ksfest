@@ -36,7 +36,7 @@ def read_sample(filename, sample_size, verbose =False, **kwargs):
 
 	skip = np.sort(np.random.choice(range(1, n+1),n-s)) #the 0-indexed header will not be included in the skip list
 	
-	df = pandas.read_csv(filename, skiprows=skip, nrows=s, **kwargs)
+	df = pd.read_csv(filename, skiprows=skip, nrows=s, **kwargs)
 
 
 
